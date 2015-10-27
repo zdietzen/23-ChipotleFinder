@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chipotle Finder</title>
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        html, body, #map_canvas {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+        }
+
+        #map_canvas {
+            position: relative;
+            height: 500px;
+            margin-bottom: 12px;
+        }
+
+        .angular-google-map-container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body ng-controller="indexController">
+    <div class="container bg-danger">
+        <div class="jumbotron text-center">
+            <h1>Chipotle Finder</h1>
+        </div>
+        <br />
+        <div class="input-group">
+            <input type="text" ng-model="inputBox" class="form-control" placeholder="Enter a ZIP...">
+            <span class="input-group-btn">
+                <button class="btn btn-danger" type="button" ng-click="getZip()">Find a Chipotle!</button>
+            </span>
+        </div>
+    <br/>
+    <div id="map_canvas">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+            <ui-gmap-markers models="chipotleData"
+                             coords="'address'"></ui-gmap-markers>
+
+        </ui-gmap-google-map>
+    </div>
+
+       
+
+    </div> <!--Container scope-->
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/lodash/lodash.min.js"></script>
+    <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/index.controller.js"></script>  
+    <script src="js/chipotle.service.js"></script> 
+    
+     
+</body>
+</html>
