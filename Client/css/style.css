@@ -1,0 +1,9 @@
+﻿.jumbotron{
+    background-image: url('http://courageconnection.org/wp-content/uploads/2015/03/Chipotle-logo-horizontal.jpg');
+    color: white;
+    height: 287px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+}
